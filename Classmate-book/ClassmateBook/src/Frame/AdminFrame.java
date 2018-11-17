@@ -259,15 +259,15 @@ public class AdminFrame extends JFrame{
 					
 					dtm.setRowCount(0);
 					
-					  class1 = ClassDao.getClass(Integer.parseInt(gid));
+					class1 = ClassDao.getClass(Integer.parseInt(gid));
+					System.out.println(Integer.parseInt(gid));
+					Vector v = new Vector();
+					v.add(class1.getId());
+					v.add(class1.getSchool());
+					v.add(class1.getName());
+					v.add(class1.getUsername());
 				  
-						  Vector v = new Vector();
-						  v.add(class1.getId());
-						  v.add(class1.getSchool());
-						  v.add(class1.getName());
-						  v.add(class1.getUsername());
-						  
-						  dtm.addRow(v);
+					dtm.addRow(v);
 					
 				}
 				

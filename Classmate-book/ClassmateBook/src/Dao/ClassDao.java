@@ -84,7 +84,7 @@ public class ClassDao extends Dao{
 	/**
 	 * Ìí¼Ó
 	 */
-	public static int addDoctorClass(Class1 item) {
+	public static int addClass(Class1 item) {
 		int iRow = 0;
 		try {
 			getConn();

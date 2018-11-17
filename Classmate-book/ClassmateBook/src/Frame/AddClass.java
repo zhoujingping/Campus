@@ -15,195 +15,131 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import Dao.ClassDao;
-import model.Class;
+import model.Class1;
 
 public class AddClass extends JFrame{
     
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
-    JPanel contentPane;
-    
-    private JTextField dno = null;
-    private JTextField dname = null;
-    private JTextField dsex = null;
-    private JTextField dage = null;
-    private JTextField employ = null;
-    private JTextField phone = null;
-    private JTextField ono = null;
-    private JTextField title = null;
-    private String gdno;
-    private int i;
-    
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel contentPane;
+	
+	private JTextField id = null;
+	private JTextField school = null;
+	private JTextField name = null;
+	private JTextField username = null;
+	private String gid;
+	private int i;
+	
 
-    private static Class class = new Class();
-    
-    
-    
-    public AddClass(){
-        setTitle("ï¿½ï¿½ï¿½Ò½ï¿½ï¿½");                             //ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);          //ï¿½ï¿½ï¿½ï¿½ï¿½Ø±Õ°ï¿½Å¥ï¿½Ç¹Ø±ï¿½
-        setSize(350, 550);
-        contentPane = new JPanel();                             //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));     //ï¿½ï¿½ï¿½Ã±ß¿ï¿½
-        setContentPane(contentPane);                            //Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½
-        
-        JPanel panel1 = new JPanel();
-        JLabel label1 = new JLabel("Ò½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½");
-        panel1.add(label1);
-        dno = new JTextField();
-        panel1.add(dno);
-        dno.setColumns(10);
-        dno.setBackground(Color.LIGHT_GRAY);
-        dno.setEditable(false);
-        panel1.setBorder(new EmptyBorder(10, 13, 10, 20));
-        
-        JPanel panel2 = new JPanel();
-        JLabel label2 = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
-        panel2.add(label2);
-        dname = new JTextField();
-        panel2.add(dname);
-        dname.setColumns(10);
-        panel2.setBorder(new EmptyBorder(10, 33, 10, 20));
-        
-        JPanel panel3 = new JPanel();
-        JLabel label3 = new JLabel("ï¿½Ô±ï¿½");
-        panel3.add(label3);
-        dsex = new JTextField();
-        panel3.add(dsex);
-        dsex.setColumns(10);
-        panel3.setBorder(new EmptyBorder(10, 33, 10, 20));
-        
-        JPanel panel4 = new JPanel();
-        JLabel label4 = new JLabel("ï¿½ï¿½ï¿½ä£º");
-        panel4.add(label4);
-        dage = new JTextField();
-        panel4.add(dage);
-        dage.setColumns(10);
-        panel4.setBorder(new EmptyBorder(10, 33, 10, 20));
-        
-        JPanel panel5 = new JPanel();
-        JLabel label6 = new JLabel("ï¿½ï¿½ï¿½ÒºÅ£ï¿½");
-        panel5.add(label6);
-        ono = new JTextField();
-        panel5.add(ono);
-        ono.setColumns(10);
-        panel5.setBorder(new EmptyBorder(10, 23, 10, 20));
-        
-        JPanel panel6 = new JPanel();
-        JLabel label5 = new JLabel("ï¿½ï¿½ï¿½Ê£ï¿½");
-        panel6.add(label5);
-        employ = new JTextField();
-        panel6.add(employ);
-        employ.setColumns(10);
-        panel6.setBorder(new EmptyBorder(10, 33, 10, 20));
-        
-        JPanel panel7 = new JPanel();
-        JLabel label7 = new JLabel("ï¿½ç»°ï¿½ï¿½");
-        panel7.add(label7);
-        phone = new JTextField();
-        panel7.add(phone);
-        phone.setColumns(10);
-        panel7.setBorder(new EmptyBorder(10, 33, 10, 20));
-        
-        JPanel panel8 = new JPanel();
-        JLabel label8 = new JLabel("Ö°ï¿½Æ£ï¿½");
-        panel8.add(label8);
-        title = new JTextField();
-        panel8.add(title);
-        title.setColumns(10);
-        panel8.setBorder(new EmptyBorder(10, 33, 10, 20));
-        
-        JButton add = new JButton("ï¿½ï¿½ï¿½");
-        JPanel panel9 = new JPanel();
-        panel9.add(add);
-        panel9.setBorder(new EmptyBorder(5, 33, 10, 20));
-        
-        contentPane.add(panel1);
-        contentPane.add(panel2);
-        contentPane.add(panel3);
-        contentPane.add(panel4);
-        contentPane.add(panel5);
-        contentPane.add(panel6);
-        contentPane.add(panel7);
-        contentPane.add(panel8);
-        contentPane.add(panel9);
-        
-        System.out.println(ClassManegeFrame.getnum());
-        gdno = String.format("%08d", ClassManegeFrame.getnum());
-        System.out.println(gdno);
-        dno.setText(gdno);
-        class.setdno(gdno);
-        System.out.println(class.getdno());
-        class.setpsd("00000000");
-        
-        add.addActionListener(new ActionListener() {
-            
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                if (!dname.getText().equals("")) {
-                    class.setdname(dname.getText());
-                    System.out.println(dname);
-                }else {
-                    class.setdname(null);
-                }
-                if (!dsex.getText().equals("")) {
-                    class.setdsex(dsex.getText());
-                }else {
-                    class.setdsex(null);
-                }
-                if (!dage.getText().equals("")) {
-                    class.setdage(Integer.parseInt(dage.getText()));
-                }else {
-                    class.setdage(0);
-                }
-                if (!employ.getText().equals("")) {
-                    class.setemploy(Integer.parseInt(employ.getText()));
-                }else {
-                    class.setemploy(0);
-                }
-                if (!phone.getText().equals("")) {
-                    class.setphone(phone.getText());
-                }else {
-                    class.setphone(null);
-                }
-                if (!ono.getText().equals("")) {
-                    class.setono(ono.getText());
-                }else {
-                    class.setono(null);
-                }
-                if (!title.getText().equals("")) {
-                    class.settitle(title.getText());
-                }else {
-                    class.settitle(null);
-                }
-                ClassManegeFrame.setnum(ClassManegeFrame.getnum());
-                i = ClassDao.addClass(class);
-                JOptionPane.showMessageDialog(null, "ï¿½ï¿½Ó³É¹ï¿½");
-                
-                Vector v = new Vector();
-                v.add(AddClass.getclass().getdno());
-                v.add(AddClass.getclass().getdname());
-                v.add(AddClass.getclass().getdsex());
-                v.add(AddClass.getclass().getdage());
-                v.add(AddClass.getclass().getemploy());
-                v.add(AddClass.getclass().getono());
-                v.add(AddClass.getclass().getphone());
-                v.add(AddClass.getclass().gettitle());
-                ClassManegeFrame.dtm.addRow(v);
-                
-                dispose();
-            }
-        });
-        
-        
-    }
-    public static Class getclass() {
-        return class;
-    }
-    
+	private static Class1 class1 = new Class1();
+	
+	
+	
+	public AddClass(){
+		setTitle("Ìí¼Ó°à¼¶");								//ÉèÖÃ´°Ìå±êÌâ
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);			//µ¥»÷¹Ø±Õ°´Å¥ÊÇ¹Ø±Õ
+		setSize(350, 400);
+		contentPane = new JPanel();								//´´½¨Ãæ°å
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));		//ÉèÖÃ±ß¿ò
+		setContentPane(contentPane); 							//Ó¦ÓÃÃæ°å
+		
+		JPanel panel1 = new JPanel();
+		JLabel label1 = new JLabel("°à¼¶ºÅ£º");
+		panel1.add(label1);
+		id = new JTextField();
+		panel1.add(id);
+		id.setColumns(10);
+		id.setBackground(Color.LIGHT_GRAY);
+		id.setEditable(false);
+		panel1.setBorder(new EmptyBorder(10, 23, 10, 20));
+		
+		JPanel panel2 = new JPanel();
+		JLabel label2 = new JLabel("Ñ§Ð££º");
+		panel2.add(label2);
+		school = new JTextField();
+		panel2.add(school);
+		school.setColumns(10);
+		panel2.setBorder(new EmptyBorder(10, 33, 10, 20));
+		
+		JPanel panel3 = new JPanel();
+		JLabel label3 = new JLabel("°à¼¶Ãû£º");
+		panel3.add(label3);
+		name = new JTextField();
+		panel3.add(name);
+		name.setColumns(10);
+		panel3.setBorder(new EmptyBorder(10, 23, 10, 20));
+		
+		JPanel panel4 = new JPanel();
+		JLabel label4 = new JLabel("°à³¤£º");
+		panel4.add(label4);
+		username = new JTextField();
+		panel4.add(username);
+		username.setColumns(10);
+		panel4.setBorder(new EmptyBorder(10, 33, 10, 20));
+		
+		
+		JButton add = new JButton("Ìí¼Ó");
+		JPanel panel9 = new JPanel();
+		panel9.add(add);
+		panel9.setBorder(new EmptyBorder(5, 33, 10, 20));
+		
+		contentPane.add(panel1);
+		contentPane.add(panel2);
+		contentPane.add(panel3);
+		contentPane.add(panel4);
+		contentPane.add(panel9);
+		
+		System.out.println(AdminFrame.getnum());
+		gid = String.valueOf(AdminFrame.getnum());
+		System.out.println(gid);
+		id.setText(gid);
+		class1.setId(Integer.parseInt(gid));
+		System.out.println(class1.getId());
+		
+		add.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (!school.getText().equals("")) {
+					class1.setSchool(school.getText());
+					System.out.println(school);
+				}else {
+					class1.setSchool(null);
+				}
+				if (!name.getText().equals("")) {
+					class1.setName(name.getText());
+				}else {
+					class1.setName(null);
+				}
+				if (!username.getText().equals("")) {
+					class1.setUsername(username.getText());
+				}else {
+					class1.setUsername(null);
+				}
+				AdminFrame.setnum(AdminFrame.getnum());
+				i = ClassDao.addClass(class1);
+				JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦");
+				
+				Vector v = new Vector();
+				v.add(AddClass.getdoctor().getId());
+				v.add(AddClass.getdoctor().getSchool());
+				v.add(AddClass.getdoctor().getName());
+				v.add(AddClass.getdoctor().getUsername());
+				AdminFrame.dtm.addRow(v);
+				
+				dispose();
+			}
+		});
+		
+		
+	}
+	public static Class1 getdoctor() {
+		return class1;
+	}
+	
 }
 
 

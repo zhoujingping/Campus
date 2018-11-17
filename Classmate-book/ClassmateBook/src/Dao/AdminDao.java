@@ -15,7 +15,7 @@ public class AdminDao extends Dao {
         String psd = ad.getPassWord();
         conn = Dao.getConn();
         try {
-            PreparedStatement pstmt = conn.prepareStatement("select Password from doctor where username = ? ");
+            PreparedStatement pstmt = conn.prepareStatement("select Password from admin where username = ? ");
             pstmt.setString(1,username);
             rs = pstmt.executeQuery();
             if (rs.next() && rs.getRow() > 0) {		//查询到用户信息
