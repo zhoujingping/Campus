@@ -62,7 +62,7 @@
           data-startslide="0" 
           data-endslide="5" 
           style="z-index: 5;">
-          <h1><span class="t_white"><br>∏£¥ÛÕ¨—ß¬º</span></h1>
+          <h1><span class="t_white"><br>Á¶èÂ§ßÂêåÂ≠¶ÂΩï</span></h1>
         </div>
         <div class="tp-caption tp-static-layer" 
           id="slide-37-layer-2" 
@@ -88,7 +88,7 @@
           data-basealign="slide" 
           data-startslide="0" 
           data-endslide="5" 
-          style="z-index: 5;"><a href="#." class="btn-white border_radius uppercase">µº≥ˆŒ™±Ì∏Ò</a>
+          style="z-index: 5;"><a href="#." class="btn-white border_radius uppercase">ÂØºÂá∫‰∏∫Ë°®Ê†º</a>
         </div>
       </div>
     </ul>
@@ -114,24 +114,24 @@
   </div>
   
   <form class="callus top30 clearfix centered" method="post" action="" onsubmit="return check(this);">
-  <h2 class="text-uppercase t_white bottom20 text-center">ÃÌº”–≈œ¢</h2>
+  <h2 class="text-uppercase t_white bottom20 text-center">Ê∑ªÂä†‰ø°ÊÅØ</h2>
     <div class="row">
       <div class="col-sm-6">
         <div class="single-query bottom15">
-          <input type="text" class="v_name" placeholder="√˚◊÷">
+          <input type="text" class="v_name" placeholder="ÂêçÂ≠ó">
         </div>
       </div>
       <div class="col-sm-6">
         <div class="single-query bottom15">
           <div class="intro">
-          <input type="text" class="v_address" placeholder="µÿ÷∑">
+          <input type="text" class="v_address" placeholder="Âú∞ÂùÄ">
           </div>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="single-query bottom15">
           <div class="intro">
-             <input type="text" class="v_wechat" placeholder="Œ¢–≈">
+             <input type="text" class="v_wechat" placeholder="ÂæÆ‰ø°">
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
       <div class="col-sm-6">
         <div class="single-query bottom15">
           <div class="intro">
-             <input type="text" class="v_phone" placeholder="µÁª∞">
+             <input type="text" class="v_phone" placeholder="ÁîµËØù">
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@
         <div class="single-query bottom15">
           <div class="intro">
             <select>
-              <option class="active">∞‡º∂</option>
+              <option class="active">Áè≠Á∫ß</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -185,7 +185,7 @@
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4 text-right form-group top30">
-        <button type="submit" class="border_radius btn-yellow text-uppercase">ÃÌº”</button>
+        <button type="submit" class="border_radius btn-yellow text-uppercase">Ê∑ªÂä†</button>
       </div>
     </div>
   </form>
