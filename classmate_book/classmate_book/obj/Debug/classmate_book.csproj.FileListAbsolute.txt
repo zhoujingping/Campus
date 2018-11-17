@@ -1,0 +1,15 @@
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.csprojAssemblyReference.cache
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.Properties.Resources.resources
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.Login.resources
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.Register.resources
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.Welcome.resources
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.csproj.GenerateResource.cache
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.csproj.CoreCompileInputs.cache
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\bin\Debug\campus.mdf
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\bin\Debug\campus_log.ldf
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\bin\Debug\classmate_book.exe.config
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\bin\Debug\classmate_book.exe
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\bin\Debug\classmate_book.pdb
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.exe
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.pdb
+C:\Users\b8440\Desktop\Campus-master\Classmate-book\classmate_book\classmate_book\obj\Debug\classmate_book.Form1.resources
