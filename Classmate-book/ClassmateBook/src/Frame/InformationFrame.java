@@ -22,6 +22,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import Dao.InformationDao;
+import excel.excelOut;
 import model.information;
 
 public class InformationFrame extends JFrame{
@@ -72,8 +73,12 @@ public class InformationFrame extends JFrame{
 		String[] tableHeads = new String[]{"ID","姓名","家庭地址","联系电话","微信","邮箱","QQ","班级ID","个性语言"};
 		dtm = (DefaultTableModel)table.getModel();
 		dtm.setColumnIdentifiers(tableHeads);
-		ArrayList<information> list = (ArrayList<information>) InformationDao.getAllInformation(no);
-		  
+		ArrayList<information> list;
+		if (no == 0) {
+			list = (ArrayList<information>) InformationDao.getAInformation();
+		}else {
+			list = (ArrayList<information>) InformationDao.getAllInformation(no);
+		}
 		for(j = 0; j < list.size(); j++) {
 			Vector v = new Vector();
 			v.add(list.get(j).getId());
@@ -197,6 +202,8 @@ public class InformationFrame extends JFrame{
 		JButton select = new JButton("查找");
 		panel7.add(select);
 		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
+		
+
 		
 		contentPane.add(panel1);
 		contentPane.add(panel2);

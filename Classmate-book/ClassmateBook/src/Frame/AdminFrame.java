@@ -25,6 +25,7 @@ import javax.swing.table.DefaultTableModel;
 import Dao.ClassDao;
 import model.Class1;
 import Frame.AddClass;
+import excel.excelOut;
 
 public class AdminFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -159,14 +160,28 @@ public class AdminFrame extends JFrame{
 		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
 		
 
-		JButton detail = new JButton("通讯录");
+		JButton detail = new JButton("查看通讯录");
 		panel7.add(detail);
+		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
+		
+
+		JButton out = new JButton("导出该班通讯录");
+		panel7.add(out);
 		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
 		
 		contentPane.add(panel1);
 		contentPane.add(panel3);
 		contentPane.add(panel);
 		contentPane.add(panel7);
+		
+		out.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				excelOut.ExcelOut(gname, Integer.parseInt(gid));
+			}
+		});
 		
 		delete.addActionListener(new ActionListener() {
 			

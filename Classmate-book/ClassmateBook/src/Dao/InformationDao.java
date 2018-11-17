@@ -100,6 +100,37 @@ private static int id = 0;
 		}
 		return list;
 	}
+	public static java.util.List<information> getAInformation(){
+		java.util.List<information> list = new ArrayList<information>();
+		try {
+			getConn();
+			stmt = conn.createStatement();
+			String sql = "select * from information";
+			pstmt= conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				information item = new information();
+				item.setId(rs.getInt("id"));
+				item.setName(rs.getString("name"));
+				item.setAddress(rs.getString("address"));
+				item.setPhone(rs.getString("phone"));
+				item.setWchat(rs.getString("wchat"));
+				item.setEmail(rs.getString("email"));
+				item.setQQ(rs.getString("QQ"));
+				item.setClassId(rs.getInt("classid"));
+				item.setMessage(rs.getString("message"));
+				
+				list.add(item);
+				
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			closeAll();
+		}
+		return list;
+	}
 	
 	/**
 	 * Ìí¼Ó
