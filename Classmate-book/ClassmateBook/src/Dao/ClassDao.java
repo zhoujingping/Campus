@@ -31,7 +31,7 @@ public class ClassDao extends Dao{
 				class1.setName(rs.getString("Name"));
 				class1.setUsername("Username");
 			}else {
-				JOptionPane.showMessageDialog(null, "医生工号不存在");
+				JOptionPane.showMessageDialog(null, "id不存在");
 				class1.setId(0);
 			}
 		}catch (Exception e) {
@@ -117,7 +117,7 @@ public class ClassDao extends Dao{
 			pstmt.setString(1, item.getSchool());
 			pstmt.setString(2, item.getName());
 			pstmt.setString(3, item.getUsername());
-			
+			pstmt.setInt(4, item.getId());
 			iRow = pstmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception

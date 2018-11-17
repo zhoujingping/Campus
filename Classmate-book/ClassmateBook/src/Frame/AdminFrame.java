@@ -25,6 +25,7 @@ import javax.swing.table.DefaultTableModel;
 import Dao.ClassDao;
 import model.Class1;
 import Frame.AddClass;
+import excel.excelOut;
 
 public class AdminFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -136,11 +137,13 @@ public class AdminFrame extends JFrame{
 		panel6.add(delete);
 		panel6.setBorder(new EmptyBorder(0, 20, 0, 20));
 		panel3.add(panel6);
+		
 		JButton clear = new JButton("清空");
 		JPanel panel8 = new JPanel();
 		panel8.add(clear);
 		panel8.setBorder(new EmptyBorder(0, 20, 0, 20));
 		panel3.add(panel8);
+
 		
 	//	panel3.add(panel7);
 
@@ -156,10 +159,29 @@ public class AdminFrame extends JFrame{
 		panel7.add(select);
 		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
 		
+
+		JButton detail = new JButton("查看通讯录");
+		panel7.add(detail);
+		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
+		
+
+		JButton out = new JButton("导出该班通讯录");
+		panel7.add(out);
+		panel7.setBorder(new EmptyBorder(0, 20, 0, 0));
+		
 		contentPane.add(panel1);
 		contentPane.add(panel3);
 		contentPane.add(panel);
 		contentPane.add(panel7);
+		
+		out.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				excelOut.ExcelOut(gname, Integer.parseInt(gid));
+			}
+		});
 		
 		delete.addActionListener(new ActionListener() {
 			
@@ -245,6 +267,20 @@ public class AdminFrame extends JFrame{
 			}
 		});
 		
+		detail.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				InformationFrame informationFrame = new InformationFrame(Integer.parseInt(id.getText()));		//创建管理员操作界面
+				informationFrame.setVisible(true);
+				Toolkit toolkit = informationFrame.getToolkit();	//获得Toolkit对象
+				Dimension dm = toolkit.getScreenSize();		//获得屏幕的大小
+				//使主屏幕居中
+				informationFrame.setLocation((dm.width - informationFrame.getWidth())/2, (dm.height - informationFrame.getHeight())/2);
+			}
+		});
+		
 		select.addActionListener(new ActionListener() {
 			
 			@Override
@@ -259,8 +295,7 @@ public class AdminFrame extends JFrame{
 					
 					dtm.setRowCount(0);
 					
-					class1 = ClassDao.getClass(Integer.parseInt(gid));
-					System.out.println(Integer.parseInt(gid));
+					class1 = ClassDao.getClass(Integer.parseInt(gsid));
 					Vector v = new Vector();
 					v.add(class1.getId());
 					v.add(class1.getSchool());
