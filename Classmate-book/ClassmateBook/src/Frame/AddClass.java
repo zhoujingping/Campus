@@ -124,10 +124,10 @@ public class AddClass extends JFrame{
 				JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦");
 				
 				Vector v = new Vector();
-				v.add(AddClass.getdoctor().getId());
-				v.add(AddClass.getdoctor().getSchool());
-				v.add(AddClass.getdoctor().getName());
-				v.add(AddClass.getdoctor().getUsername());
+				v.add(AddClass.getclass().getId());
+				v.add(AddClass.getclass().getSchool());
+				v.add(AddClass.getclass().getName());
+				v.add(AddClass.getclass().getUsername());
 				AdminFrame.dtm.addRow(v);
 				
 				dispose();
@@ -136,7 +136,7 @@ public class AddClass extends JFrame{
 		
 		
 	}
-	public static Class1 getdoctor() {
+	public static Class1 getclass() {
 		return class1;
 	}
 	
