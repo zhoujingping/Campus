@@ -54,7 +54,7 @@ public class InformationDao extends Dao{
 					Information.setClassId(rs.getInt("classid"));
 				}else {
 					JOptionPane.showMessageDialog(null, "医生工号不存在");
-					Information.setid(null);
+					Information.setId(0);
 				}
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -78,24 +78,23 @@ public class InformationDao extends Dao{
 		 * 查询全部
 		 * @return
 		 */
-		public static java.util.List<Information> getAllInformation(){
-			java.util.List<Information> list = new ArrayList<Information>();
+		public static java.util.List<information> getAllInformation(){
+			java.util.List<information> list = new ArrayList<information>();
 			try {
 				getConn();
 				stmt = conn.createStatement();
 				String sql = "select * from Information";
 				rs = stmt.executeQuery(sql);
 				while(rs.next()) {
-					Information item = new Information();
-					item.setid(rs.getString("id"));
-					item.setname(rs.getString("name"));
-					item.setaddress(rs.getString("address"));
-					item.setdage(rs.getInt("dage"));
-					item.setpsd(rs.getString("psd"));
-					item.setemail(rs.getInt("email"));
-					item.setqq(rs.getString("qq"));
-					item.setphone(rs.getString("phone"));
-					item.setclassid(rs.getString("classid"));
+					information item = new information();
+					item.setId(rs.getInt("id"));
+					item.setName(rs.getString("name"));
+					item.setAddress(rs.getString("address"));
+					item.setMessage(rs.getString("message"));
+					item.setEmail(rs.getString("email"));
+					item.setQQ(rs.getString("qq"));
+					item.setPhone(rs.getString("phone"));
+					item.setClassId(rs.getInt("classid"));
 					
 					list.add(item);
 					
